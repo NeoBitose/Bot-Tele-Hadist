@@ -87,10 +87,10 @@ class ExampleConversation extends Conversation
     public function getData($kitab, $no)
     {
         try {
-            $str='https://scrape-fastapi.herokuapp.com/hadits/?tokoh='.$kitab.'&no='.$no;
-            // $str='https://hadits-api-zhirrr.vercel.app/books/'.$kitab.'/'.$no;
+            // $str='https://scrape-fastapi.herokuapp.com/hadits/?tokoh='.$kitab.'&no='.$no;
+            $str='https://hadits-api-zhirrr.vercel.app/books/'.$kitab.'/'.$no;
             $dt = json_decode(file_get_contents($str));
-            return [$dt->data->contents->arab, $dt->data->contents->id, false, $dt->data->contents->judul];
+            return [$dt->data->contents->arab, $dt->data->contents->id, false, $dt->data->name];
         } catch (\Throwable $th) {
             return ["Something went wrong 😯️","Sepertinya ada masalah.🧐️", true];
         }

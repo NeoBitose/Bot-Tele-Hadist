@@ -24,7 +24,7 @@ class BotManController extends Controller
         $config = [
             // Your driver-specific configuration
             "telegram" => [
-               "token" => "TOKEN_TELEGRAM_KAMU"
+               "token" => "7591896992:AAHELDTQvmK63ivD0JDoDJXfcvcOxrfNZWc"
             ]
         ];
         $botman = BotManFactory::create($config, new LaravelCache());
